@@ -38,5 +38,5 @@ app.post('/api/v1/expense',async function(req,res,next){
 })
 const port = process.env.PORT || 3000
 app.listen(8080,function(){
-    console.log("Server is running and http://localhost:"+PORT);
+    console.log("Server is running and http://localhost:"+port);
 })
