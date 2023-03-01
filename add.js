@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-mongoose.connect('mongodb://0.0.0.0:27017/expense-tracker').then(()=>{
+mongoose.connect('mongodb+srv://BharathKumar-3:kXlZutYY2omP7tyL@cluster0.fjop0gf.mongodb.net/ExpenseTracker').then(()=>{
     console.log('connected')
 })
 
