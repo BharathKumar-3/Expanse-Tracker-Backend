@@ -12,30 +12,30 @@ const cors = require('cors');
 // })
 
 
-app.get('/api/v1/expense/health',function(req,res,next){
+app.get('/',function(req,res,next){
     res.send("server is running");
 })
 
-// app.get('/api/v1/expense',async function(req,res,next){
-//     try{
-//         const expenses = await Expenses.find();
-//         res.send(expenses);
-//     }
-//     catch(err){
-//         res.send(err);
-//     }
-// })
+app.get('/expense',async function(req,res,next){
+    try{
+        const expenses = await Expenses.find();
+        res.send(expenses);
+    }
+    catch(err){
+        res.send(err);
+    }
+})
 
-// app.post('/api/v1/expense',async function(req,res,next){
-//     try{
-//         console.log(req.body);
-//         await Expenses.create(req.body);
-//         res.send("successfully created");
-//     }
-//     catch(err){
-//         res.send(err);
-//     }
-// })
+app.post('/expense',async function(req,res,next){
+    try{
+        console.log(req.body);
+        await Expenses.create(req.body);
+        res.send("successfully created");
+    }
+    catch(err){
+        res.send(err);
+    }
+})
 const port = process.env.PORT || 3000
 app.listen(8080,function(){
     console.log("Server is running and http://localhost:"+port);
